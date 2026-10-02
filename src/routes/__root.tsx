@@ -78,9 +78,9 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Roble Taller" },
+      { title: "Birucho & Dany" },
       { name: "description", content: "Muebles rústicos y lujosos hechos a mano." },
-      { property: "og:title", content: "Roble Taller" },
+      { property: "og:title", content: "Birucho & Dany" },
       { property: "og:description", content: "Muebles rústicos y lujosos hechos a mano." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },

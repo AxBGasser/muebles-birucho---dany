@@ -19,7 +19,7 @@ export interface Pieza {
 
 export const LINEA_LABEL: Record<Linea, string> = {
   rustico: "Rústico",
-  lujo: "Lujoso",
+  lujo: "Contemporáneo & Vanity",
 };
 
 export const PIEZAS: Pieza[] = [
