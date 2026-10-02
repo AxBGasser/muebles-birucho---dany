@@ -7,7 +7,7 @@ export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
       {
-        title: "Birucho &amp; Dany — Muebles rústicos y lujosos, hechos a mano",
+        title: "Birucho & Dany — Muebles rústicos y lujosos, hechos a mano",
       },
       {
         name: "description",
@@ -16,7 +16,7 @@ export const Route = createFileRoute("/")({
       },
       {
         property: "og:title",
-        content: "Birucho &amp; Dany — Muebles rústicos y lujosos, hechos a mano",
+        content: "Birucho & Dany — Muebles rústicos y lujosos, hechos a mano",
       },
       {
         property: "og:description",
@@ -117,7 +117,7 @@ function DosMundos() {
             Colección 02
           </div>
           <h3 className="mb-4 font-display text-6xl leading-none font-black">
-            Lujoso
+            Contemporáneo &amp; Vanity
           </h3>
           <p className="mb-6 leading-relaxed text-ink/70">
             Mármoles, latón cepillado y pieles curtidas a mano. Líneas limpias
@@ -128,7 +128,7 @@ function DosMundos() {
             search={{ coleccion: "lujo" }}
             className="inline-block rounded-full bg-ink px-6 py-3 font-medium text-cream"
           >
-            Explorar lujo
+            Explorar colección
           </Link>
         </div>
       </div>

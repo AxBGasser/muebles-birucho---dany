@@ -32,13 +32,13 @@ const SUCURSALES: Sucursal[] = [
 export const Route = createFileRoute("/sucursales")({
   head: () => ({
     meta: [
-      { title: "Sucursales — Birucho &amp; Dany" },
+      { title: "Sucursales — Birucho & Dany" },
       {
         name: "description",
         content:
           "Visita nuestras dos sucursales en Ciudad de México: Taller Roma y Galería Polanco. Conoce las piezas en persona.",
       },
-      { property: "og:title", content: "Sucursales — Birucho &amp; Dany" },
+      { property: "og:title", content: "Sucursales — Birucho & Dany" },
       {
         property: "og:description",
         content:

@@ -14,17 +14,17 @@ export const Route = createFileRoute("/catalogo")({
   },
   head: () => ({
     meta: [
-      { title: "Catálogo — Birucho &amp; Dany" },
+      { title: "Catálogo — Birucho & Dany" },
       {
         name: "description",
         content:
-          "Explora las dos colecciones de Birucho &amp; Dany: piezas rústicas de madera maciza y piezas lujosas en mármol y latón.",
+          "Explora las dos colecciones de Birucho & Dany: piezas rústicas de madera maciza y piezas lujosas en mármol y latón.",
       },
-      { property: "og:title", content: "Catálogo — Birucho &amp; Dany" },
+      { property: "og:title", content: "Catálogo — Birucho & Dany" },
       {
         property: "og:description",
         content:
-          "Explora las dos colecciones de Birucho &amp; Dany: piezas rústicas de madera maciza y piezas lujosas en mármol y latón.",
+          "Explora las dos colecciones de Birucho & Dany: piezas rústicas de madera maciza y piezas lujosas en mármol y latón.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
@@ -67,7 +67,7 @@ function CatalogoPage() {
             to="/catalogo"
             search={{ coleccion: "lujo" }}
           >
-            Lujoso
+            Contemporáneo &amp; Vanity
           </FiltroChip>
         </div>
         <div className="grid gap-8 pb-16 sm:grid-cols-2 lg:grid-cols-3">
