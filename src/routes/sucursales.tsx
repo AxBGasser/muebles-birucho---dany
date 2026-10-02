@@ -68,7 +68,7 @@ function SucursalesPage() {
       <section className="px-6 pt-10 pb-8 md:px-10">
         <p className="mb-2 font-display text-lg italic text-terracotta">Dos estilos</p>
         <h1 className="font-display text-5xl leading-none font-black tracking-tight md:text-7xl">
-          Sucursales.
+          Dos Sucursales.
         </h1>
       </section>
       <section className="grid gap-8 px-6 pb-16 md:grid-cols-2 md:px-10">
