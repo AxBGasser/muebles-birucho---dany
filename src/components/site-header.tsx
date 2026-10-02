@@ -17,8 +17,12 @@ export function SiteHeader() {
         </div>
       </div>
       <header className="flex items-center justify-between border-b border-ink/10 px-6 py-5 md:px-10">
-        <Link to="/" className="font-display text-2xl font-black tracking-tight">
-          Roble<span className="text-terracotta">.</span>
+        <Link
+          to="/"
+          className="font-display text-2xl font-black tracking-tight"
+          aria-label="Birucho & Dany"
+        >
+          Birucho<span className="text-terracotta">&amp;</span>Dany
         </Link>
         <nav className="hidden items-center gap-8 text-[15px] font-medium md:flex">
           <Link
