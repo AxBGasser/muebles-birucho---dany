@@ -15,7 +15,7 @@ export function SiteFooter() {
             Agenda una visita privada y toca las maderas antes de decidir.
           </p>
           <a
-            href="mailto:hola@robletaller.com"
+            href="mailto:hola@biruchodany.com"
             className="inline-block rounded-full bg-terracotta px-9 py-4 text-lg font-medium text-cream"
           >
             Reservar visita →
@@ -23,7 +23,7 @@ export function SiteFooter() {
         </div>
       </div>
       <div className="mt-14 flex justify-between border-t border-cream/10 pt-6 text-sm text-cream/50">
-        <span>© 2026 Roble Taller</span>
+        <span>© 2026 Birucho &amp; Dany</span>
         <span>Hecho a mano</span>
       </div>
     </footer>
