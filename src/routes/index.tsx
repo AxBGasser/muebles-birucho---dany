@@ -47,7 +47,7 @@ function Hero() {
     <section id="top" className="px-6 pt-12 pb-16 md:px-10">
       <p className="mb-5 font-display text-3xl italic text-terracotta ">Muebles con alma</p>
       <h1 className="font-display text-[15vw] leading-[0.82] font-black tracking-tighter md:text-[8rem]">
-        RÚSTICO
+        Rústico
         <span className="block text-forest">Y&nbsp;Contemporáneo</span>
         {/* <span className="block text-ochre">JUNTOS.</span> */}
         <span className="block text-ochre">En un solo lugar.</span>
