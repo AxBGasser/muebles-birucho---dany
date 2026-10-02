@@ -86,12 +86,14 @@ export function SiteHeader() {
         </nav>
 
         {/* CTA desktop — oculto en móvil */}
-        <Link
-          to="/sucursales"
+        <a
+          href="https://wa.me/5214181811181?text=Hola%2C%20me%20gustar%C3%ADa%20pedir%20una%20cotizaci%C3%B3n"
+          target="_blank"
+          rel="noopener noreferrer"
           className="hidden rounded-full bg-terracotta px-6 py-2.5 text-[15px] font-medium text-cream transition-colors hover:bg-terracotta/90 md:inline-flex"
         >
-          Agenda taller
-        </Link>
+          Pedir cotización
+        </a>
 
         {/* Botón hamburguesa móvil */}
         <Sheet>
@@ -124,12 +126,14 @@ export function SiteHeader() {
               )}
             </nav>
             <div className="mt-6 px-4">
-              <Link
-                to="/sucursales"
+              <a
+                href="https://wa.me/5214181811181?text=Hola%2C%20me%20gustar%C3%ADa%20pedir%20una%20cotizaci%C3%B3n"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="flex w-full items-center justify-center rounded-full bg-terracotta px-6 py-3 text-[15px] font-medium text-cream transition-colors hover:bg-terracotta/90"
               >
-                Agenda taller
-              </Link>
+                Pedir cotización
+              </a>
             </div>
           </SheetContent>
         </Sheet>

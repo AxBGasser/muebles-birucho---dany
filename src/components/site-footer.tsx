@@ -160,17 +160,21 @@ export function SiteFooter() {
             </li>
             <li>
               <a
-                href="#"
+                href="https://www.facebook.com/mueblesrusticosdanny"
+                target="_blank"
+                rel="noopener noreferrer"
                 aria-label="Visítanos en Facebook"
                 className="group flex items-center gap-3 text-cream/70 transition-colors hover:text-terracotta"
               >
                 <Facebook className="h-5 w-5 shrink-0 transition-colors group-hover:text-terracotta" />
-                <span>Birucho &amp; Dany</span>
+                <span>Muebles Rústicos Danny</span>
               </a>
             </li>
             <li>
               <a
-                href="#"
+                href="https://wa.me/5214181811181"
+                target="_blank"
+                rel="noopener noreferrer"
                 aria-label="Escríbenos por WhatsApp"
                 className="group flex items-center gap-3 text-cream/70 transition-colors hover:text-terracotta"
               >
