@@ -9,7 +9,7 @@ interface CatalogoSearch {
 
 export const Route = createFileRoute("/catalogo")({
   validateSearch: (search: Record<string, unknown>): CatalogoSearch => {
-    const c = search.coleccion;
+    const c = search["coleccion"];
     return c === "rustico" || c === "lujo" ? { coleccion: c } : {};
   },
   head: () => ({
