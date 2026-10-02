@@ -19,9 +19,9 @@ export function SiteHeader() {
         <Link
           to="/"
           className="font-display text-2xl font-black tracking-tight"
-          aria-label="Birucho & Dany"
+          aria-label="Birucho & Danny"
         >
-          Birucho<span className="text-terracotta">&amp;</span>Dany
+          Birucho<span className="text-terracotta">&amp;</span>Danny
         </Link>
         <nav className="hidden items-center gap-8 text-[15px] font-medium md:flex">
           <Link to="/catalogo" className="transition-colors hover:text-terracotta">

@@ -20,7 +20,7 @@ export function SiteFooter() {
         </div>
       </div>
       <div className="mt-14 flex justify-between border-t border-cream/10 pt-6 text-sm text-cream/50">
-        <span>© 2026 Birucho &amp; Dany</span>
+        <span>© 2026 Birucho &amp; Danny</span>
         {/* <span>Hecho a mano</span> */}
       </div>
     </footer>

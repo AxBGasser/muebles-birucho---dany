@@ -7,7 +7,7 @@ export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
       {
-        title: "Birucho & Dany — Muebles rústicos y lujosos, hechos a mano",
+        title: "Birucho & Danny — Muebles rústicos y lujosos, hechos a mano",
       },
       {
         name: "description",
@@ -16,7 +16,7 @@ export const Route = createFileRoute("/")({
       },
       {
         property: "og:title",
-        content: "Birucho & Dany — Muebles rústicos y lujosos, hechos a mano",
+        content: "Birucho & Danny — Muebles rústicos y lujosos, hechos a mano",
       },
       {
         property: "og:description",

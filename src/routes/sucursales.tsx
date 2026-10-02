@@ -5,40 +5,50 @@ import { SiteFooter } from "@/components/site-footer";
 interface Sucursal {
   nombre: string;
   direccion: string;
-  horario: string;
+  horarios: string[];
   telefono: string;
   mapsUrl: string;
 }
 
 const SUCURSALES: Sucursal[] = [
   {
-    nombre: "Taller Roma",
-    direccion: "Álvaro Obregón 168, Roma Norte, CDMX",
-    horario: "Lunes a sábado · 10:00–19:00",
-    telefono: "+52 55 4000 1234",
+    nombre: "Muebles Rústicos Birucho",
+    direccion:
+      "Muebles Rústicos Birucho, 37800 Dolores Hidalgo Cuna de la Independencia Nacional, Gto.",
+    horarios: [
+      "Lunes, Martes, Miércoles, Sábado · 09:00–18:00",
+      "Domingo · 09:00–15:00",
+      "Jueves · Cerrado",
+    ],
+    telefono: "+52 418 181 1181",
     mapsUrl:
-      "https://www.google.com/maps/search/?api=1&query=Av.+%C3%81lvaro+Obreg%C3%B3n+168%2C+Roma+Norte%2C+CDMX",
+      "https://www.google.com/maps/search/?api=1&query=Muebles+R%C3%BAsticos+Birucho&query_place_id=ChIJCbfXtdc_K4QRtDfU2JFeT40",
   },
   {
-    nombre: "Galería Polanco",
-    direccion: "Av. Presidente Masaryk 111, Polanco, CDMX",
-    horario: "Lunes a sábado · 11:00–20:00",
-    telefono: "+52 55 4000 5678",
+    nombre: "Muebles Danny",
+    direccion:
+      "Mariano Balleza 34, Centro, 37800 Dolores Hidalgo Cuna de la Independencia Nacional, Gto.",
+    horarios: [
+      "Lunes, Martes, Miércoles, Jueves, Viernes · 09:00–18:00",
+      "Sábado · 09:00–17:00",
+      "Domingo · Cerrado",
+    ],
+    telefono: "+52 418 181 1181",
     mapsUrl:
-      "https://www.google.com/maps/search/?api=1&query=Av.+Presidente+Masaryk+111%2C+Polanco%2C+CDMX",
+      "https://www.google.com/maps/search/?api=1&query=Muebles+Danny+%2C+37800+Dolores+Hidalgo+Cuna+de+la+Independencia+Nacional%2C+Gto.",
   },
 ];
 
 export const Route = createFileRoute("/sucursales")({
   head: () => ({
     meta: [
-      { title: "Sucursales — Birucho & Dany" },
+      { title: "Sucursales — Birucho & Danny" },
       {
         name: "description",
         content:
           "Visita nuestras dos sucursales en Ciudad de México: Taller Roma y Galería Polanco. Conoce las piezas en persona.",
       },
-      { property: "og:title", content: "Sucursales — Birucho & Dany" },
+      { property: "og:title", content: "Sucursales — Birucho & Danny" },
       {
         property: "og:description",
         content:
@@ -56,9 +66,7 @@ function SucursalesPage() {
     <div className="min-h-screen bg-cream font-sans text-ink antialiased">
       <SiteHeader />
       <section className="px-6 pt-10 pb-8 md:px-10">
-        <p className="mb-2 font-display text-lg italic text-terracotta">
-          Dos estilos
-        </p>
+        <p className="mb-2 font-display text-lg italic text-terracotta">Dos estilos</p>
         <h1 className="font-display text-5xl leading-none font-black tracking-tight md:text-7xl">
           Sucursales.
         </h1>
@@ -69,9 +77,7 @@ function SucursalesPage() {
             key={sucursal.nombre}
             className="rounded-[2.5rem] bg-card p-6 outline-1 -outline-offset-1 outline-black/5 md:p-8"
           >
-            <h2 className="mb-1 font-display text-3xl font-black">
-              {sucursal.nombre}
-            </h2>
+            <h2 className="mb-1 font-display text-3xl font-black">{sucursal.nombre}</h2>
             <p className="mb-6 text-ink/60">{sucursal.direccion}</p>
             <iframe
               title={`Mapa de ${sucursal.nombre}`}
@@ -82,7 +88,11 @@ function SucursalesPage() {
               className="aspect-[4/3] w-full rounded-[1.75rem] border-0 bg-moss"
             />
             <div className="mt-6 space-y-1 text-[15px]">
-              <p className="text-ink/70">{sucursal.horario}</p>
+              {sucursal.horarios.map((horario, index) => (
+                <p key={index} className="text-ink/70">
+                  {horario}
+                </p>
+              ))}
               <p>
                 <a
                   href={`tel:${sucursal.telefono.replace(/\s/g, "")}`}
@@ -106,10 +116,7 @@ function SucursalesPage() {
       <section className="px-6 pb-4 md:px-10">
         <p className="max-w-2xl text-lg leading-relaxed text-ink/70">
           ¿Prefieres hablar antes de venir?{" "}
-          <Link
-            to="/catalogo"
-            className="font-medium text-terracotta hover:text-ink"
-          >
+          <Link to="/catalogo" className="font-medium text-terracotta hover:text-ink">
             Explora el catálogo
           </Link>{" "}
           y agenda una visita a tu sucursal más cercana.
