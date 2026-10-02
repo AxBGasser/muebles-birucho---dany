@@ -1,7 +1,6 @@
 import { Link } from "@tanstack/react-router";
 
-const MARQUEE_TEXT =
-  "Madera maciza · Acabados a mano · Envío e instalación incluidos ·";
+const MARQUEE_TEXT = "Madera maciza · Acabados a mano · Envío e instalación incluidos ·";
 
 export function SiteHeader() {
   return (
@@ -25,30 +24,10 @@ export function SiteHeader() {
           Birucho<span className="text-terracotta">&amp;</span>Dany
         </Link>
         <nav className="hidden items-center gap-8 text-[15px] font-medium md:flex">
-          <Link
-            to="/catalogo"
-            search={{ coleccion: "rustico" }}
-            className="transition-colors hover:text-terracotta"
-          >
-            Rústico
-          </Link>
-          <Link
-            to="/catalogo"
-            search={{ coleccion: "lujo" }}
-            className="transition-colors hover:text-terracotta"
-          >
-            Lujoso
-          </Link>
-          <Link
-            to="/catalogo"
-            className="transition-colors hover:text-terracotta"
-          >
+          <Link to="/catalogo" className="transition-colors hover:text-terracotta">
             Catálogo
           </Link>
-          <Link
-            to="/sucursales"
-            className="transition-colors hover:text-terracotta"
-          >
+          <Link to="/sucursales" className="transition-colors hover:text-terracotta">
             Sucursales
           </Link>
           <a href="#contacto" className="transition-colors hover:text-terracotta">

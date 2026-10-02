@@ -45,18 +45,17 @@ function Index() {
 function Hero() {
   return (
     <section id="top" className="px-6 pt-12 pb-16 md:px-10">
-      <p className="mb-3 font-display text-xl italic text-terracotta">
-        Muebles con alma
-      </p>
-      <h1 className="font-display text-[15vw] leading-[0.82] font-black tracking-tighter md:text-[10rem]">
+      <p className="mb-5 font-display text-3xl italic text-terracotta ">Muebles con alma</p>
+      <h1 className="font-display text-[15vw] leading-[0.82] font-black tracking-tighter md:text-[8rem]">
         RÚSTICO
-        <span className="block text-forest">Y&nbsp;LÚXO</span>
-        <span className="block text-ochre">JUNTOS.</span>
+        <span className="block text-forest">Y&nbsp;Contemporáneo</span>
+        {/* <span className="block text-ochre">JUNTOS.</span> */}
+        <span className="block text-ochre">En un solo lugar.</span>
       </h1>
       <div className="mt-10 flex flex-col justify-between gap-6 md:flex-row md:items-end">
         <p className="max-w-md text-lg leading-relaxed text-ink/70">
-          Cada pieza nace en nuestro taller: madera noble, texturas que cuentan
-          historias y un acabado digno de las grandes casas.
+          Cada pieza nace en nuestro taller: madera noble, texturas que cuentan historias y un
+          acabado digno de las grandes casas.
         </p>
         <Link
           to="/catalogo"
@@ -71,10 +70,7 @@ function Hero() {
 
 function DosMundos() {
   return (
-    <section
-      id="mundos"
-      className="mx-4 rounded-[3rem] bg-forest p-8 text-cream md:mx-8 md:p-14"
-    >
+    <section id="mundos" className="mx-4 rounded-[3rem] bg-forest p-8 text-cream md:mx-8 md:p-14">
       <div className="mb-10 flex items-baseline justify-between">
         <h2 className="font-display text-4xl leading-none font-black md:text-6xl">
           Dos
@@ -82,37 +78,28 @@ function DosMundos() {
           mundos.
         </h2>
         <p className="hidden max-w-xs text-right text-cream/60 md:block">
-          Toca un mundo para descubrir su carácter. Ambos comparten el mismo
-          taller.
+          Toca un mundo para descubrir su carácter. Ambos comparten el mismo taller.
         </p>
       </div>
       <div className="grid gap-6 md:grid-cols-2">
-        <div
-          id="rustico"
-          className="scroll-mt-24 rounded-[2.5rem] bg-cream p-8 text-ink"
-        >
+        <div id="rustico" className="scroll-mt-24 rounded-[2.5rem] bg-cream p-8 text-ink">
           <div className="mb-6 text-[11px] font-bold tracking-[0.2em] text-terracotta uppercase">
             Colección 01
           </div>
-          <h3 className="mb-4 font-display text-6xl leading-none font-black">
-            Rústico
-          </h3>
+          <h3 className="mb-4 font-display text-6xl leading-none font-black">Rústico</h3>
           <p className="mb-6 leading-relaxed text-ink/70">
-            Madera maciza con vetas vivas, herrajes forjados y esa calidez que
-            solo da el tiempo. Para casas que abrazan lo imperfecto.
+            Madera maciza con vetas vivas, herrajes forjados y esa calidez que solo da el tiempo.
+            Para casas que abrazan lo imperfecto.
           </p>
           <Link
             to="/catalogo"
             search={{ coleccion: "rustico" }}
             className="inline-block rounded-full bg-ink px-6 py-3 font-medium text-cream"
           >
-            Explorar rústico
+            Explorar Rústico
           </Link>
         </div>
-        <div
-          id="lujo"
-          className="scroll-mt-24 rounded-[2.5rem] bg-ochre p-8 text-ink"
-        >
+        <div id="lujo" className="scroll-mt-24 rounded-[2.5rem] bg-ochre p-8 text-ink">
           <div className="mb-6 text-[11px] font-bold tracking-[0.2em] text-ink/60 uppercase">
             Colección 02
           </div>
@@ -120,15 +107,15 @@ function DosMundos() {
             Contemporáneo &amp; Vanity
           </h3>
           <p className="mb-6 leading-relaxed text-ink/70">
-            Mármoles, latón cepillado y pieles curtidas a mano. Líneas limpias
-            y presencia serena para espacios que hablan en voz baja.
+            Mármoles, latón cepillado y pieles curtidas a mano. Líneas limpias y presencia serena
+            para espacios que hablan en voz baja.
           </p>
           <Link
             to="/catalogo"
             search={{ coleccion: "lujo" }}
             className="inline-block rounded-full bg-ink px-6 py-3 font-medium text-cream"
           >
-            Explorar colección
+            Explorar Contemporáneo &amp; Vanity
           </Link>
         </div>
       </div>
@@ -140,9 +127,7 @@ function PiezasDestacadas() {
   return (
     <section id="piezas" className="scroll-mt-16 px-6 py-16 md:px-10">
       <div className="mb-8 flex items-end justify-between">
-        <h2 className="font-display text-4xl font-black md:text-5xl">
-          Piezas destacadas
-        </h2>
+        <h2 className="font-display text-4xl font-black md:text-5xl">Piezas destacadas</h2>
         <Link
           to="/catalogo"
           className="font-medium text-terracotta transition-colors hover:text-ink"
@@ -165,16 +150,12 @@ function PiezasDestacadas() {
             </div>
             <div className="mt-4 flex items-start justify-between">
               <div>
-                <h3 className="font-display text-xl font-bold">
-                  {pieza.nombre}
-                </h3>
+                <h3 className="font-display text-xl font-bold">{pieza.nombre}</h3>
                 <p className="text-sm text-ink/50">
                   {LINEA_LABEL[pieza.linea]} · {pieza.material}
                 </p>
               </div>
-              <span className="font-display text-lg font-bold">
-                {formatPrecio(pieza.precio)}
-              </span>
+              <span className="font-display text-lg font-bold">{formatPrecio(pieza.precio)}</span>
             </div>
           </article>
         ))}

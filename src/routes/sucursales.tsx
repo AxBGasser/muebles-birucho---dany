@@ -57,7 +57,7 @@ function SucursalesPage() {
       <SiteHeader />
       <section className="px-6 pt-10 pb-8 md:px-10">
         <p className="mb-2 font-display text-lg italic text-terracotta">
-          Dos puntos, un mismo taller
+          Dos estilos
         </p>
         <h1 className="font-display text-5xl leading-none font-black tracking-tight md:text-7xl">
           Sucursales.
