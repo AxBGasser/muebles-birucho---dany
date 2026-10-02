@@ -1,7 +1,7 @@
-import { createFileRoute } from "@tanstack/react-router";
-import mesaRoble from "@/assets/mesa-roble.jpg";
-import consolaLatón from "@/assets/consola-laton.jpg";
-import sillaRattan from "@/assets/silla-rattan.jpg";
+import { createFileRoute, Link } from "@tanstack/react-router";
+import { SiteHeader } from "@/components/site-header";
+import { SiteFooter } from "@/components/site-footer";
+import { PIEZAS, LINEA_LABEL, formatPrecio } from "@/lib/pieces";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -33,60 +33,12 @@ export const Route = createFileRoute("/")({
 function Index() {
   return (
     <div className="overflow-hidden bg-cream font-sans text-ink antialiased">
-      <MarqueeStrip />
-      <Header />
+      <SiteHeader />
       <Hero />
       <DosMundos />
       <PiezasDestacadas />
-      <Footer />
+      <SiteFooter />
     </div>
-  );
-}
-
-function MarqueeStrip() {
-  const text =
-    "Madera maciza · Acabados a mano · Envío e instalación incluidos ·";
-  return (
-    <div className="overflow-hidden bg-ink py-2 text-cream">
-      <div className="marquee flex whitespace-nowrap font-display text-[15px] italic tracking-tight">
-        <span className="px-6">
-          {text} {text} {text}
-        </span>
-        <span className="px-6">
-          {text} {text} {text}
-        </span>
-      </div>
-    </div>
-  );
-}
-
-function Header() {
-  return (
-    <header className="flex items-center justify-between border-b border-ink/10 px-6 py-5 md:px-10">
-      <a href="#top" className="font-display text-2xl font-black tracking-tight">
-        Roble<span className="text-terracotta">.</span>
-      </a>
-      <nav className="hidden gap-8 text-[15px] font-medium md:flex">
-        <a href="#rustico" className="transition-colors hover:text-terracotta">
-          Rústico
-        </a>
-        <a href="#lujo" className="transition-colors hover:text-terracotta">
-          Lujoso
-        </a>
-        <a href="#piezas" className="transition-colors hover:text-terracotta">
-          Piezas
-        </a>
-        <a href="#contacto" className="transition-colors hover:text-terracotta">
-          Contacto
-        </a>
-      </nav>
-      <a
-        href="#contacto"
-        className="rounded-full bg-ink px-6 py-2.5 text-[15px] font-medium text-cream"
-      >
-        Agenda taller
-      </a>
-    </header>
   );
 }
 
@@ -106,12 +58,12 @@ function Hero() {
           Cada pieza nace en nuestro taller: madera noble, texturas que cuentan
           historias y un acabado digno de las grandes casas.
         </p>
-        <a
-          href="#mundos"
+        <Link
+          to="/catalogo"
           className="inline-block shrink-0 rounded-full bg-terracotta px-9 py-4 text-lg font-medium text-cream"
         >
           Ver las dos colecciones →
-        </a>
+        </Link>
       </div>
     </section>
   );
@@ -149,12 +101,13 @@ function DosMundos() {
             Madera maciza con vetas vivas, herrajes forjados y esa calidez que
             solo da el tiempo. Para casas que abrazan lo imperfecto.
           </p>
-          <a
-            href="#piezas"
+          <Link
+            to="/catalogo"
+            search={{ coleccion: "rustico" }}
             className="inline-block rounded-full bg-ink px-6 py-3 font-medium text-cream"
           >
             Explorar rústico
-          </a>
+          </Link>
         </div>
         <div
           id="lujo"
@@ -170,38 +123,18 @@ function DosMundos() {
             Mármoles, latón cepillado y pieles curtidas a mano. Líneas limpias
             y presencia serena para espacios que hablan en voz baja.
           </p>
-          <a
-            href="#piezas"
+          <Link
+            to="/catalogo"
+            search={{ coleccion: "lujo" }}
             className="inline-block rounded-full bg-ink px-6 py-3 font-medium text-cream"
           >
             Explorar lujo
-          </a>
+          </Link>
         </div>
       </div>
     </section>
   );
 }
-
-const PIEZAS = [
-  {
-    img: mesaRoble,
-    nombre: "Mesa Roble Vivo",
-    linea: "Rústico · 2.40 m",
-    precio: "$4.900",
-  },
-  {
-    img: consolaLatón,
-    nombre: "Consola Latón",
-    linea: "Lujoso · mármol Calacatta",
-    precio: "$6.200",
-  },
-  {
-    img: sillaRattan,
-    nombre: "Silla Rattan",
-    linea: "Rústico · cuero curtido",
-    precio: "$1.850",
-  },
-];
 
 function PiezasDestacadas() {
   return (
@@ -210,16 +143,16 @@ function PiezasDestacadas() {
         <h2 className="font-display text-4xl font-black md:text-5xl">
           Piezas destacadas
         </h2>
-        <a
-          href="#contacto"
+        <Link
+          to="/catalogo"
           className="font-medium text-terracotta transition-colors hover:text-ink"
         >
           Ver todo
-        </a>
+        </Link>
       </div>
       <div className="grid gap-6 md:grid-cols-3">
-        {PIEZAS.map((pieza) => (
-          <article key={pieza.nombre}>
+        {PIEZAS.slice(0, 3).map((pieza) => (
+          <article key={pieza.id}>
             <div className="w-full overflow-hidden rounded-[1.75rem] bg-moss outline-1 -outline-offset-1 outline-black/5">
               <img
                 src={pieza.img}
@@ -235,47 +168,17 @@ function PiezasDestacadas() {
                 <h3 className="font-display text-xl font-bold">
                   {pieza.nombre}
                 </h3>
-                <p className="text-sm text-ink/50">{pieza.linea}</p>
+                <p className="text-sm text-ink/50">
+                  {LINEA_LABEL[pieza.linea]} · {pieza.material}
+                </p>
               </div>
               <span className="font-display text-lg font-bold">
-                {pieza.precio}
+                {formatPrecio(pieza.precio)}
               </span>
             </div>
           </article>
         ))}
       </div>
     </section>
-  );
-}
-
-function Footer() {
-  return (
-    <footer
-      id="contacto"
-      className="mt-8 bg-ink px-6 py-16 text-cream md:px-10"
-    >
-      <div className="grid items-center gap-10 md:grid-cols-2">
-        <h2 className="font-display text-5xl leading-[0.9] font-black md:text-7xl">
-          Visita
-          <br />
-          nuestro taller.
-        </h2>
-        <div className="md:text-right">
-          <p className="mb-6 text-cream/60">
-            Agenda una visita privada y toca las maderas antes de decidir.
-          </p>
-          <a
-            href="mailto:hola@robletaller.com"
-            className="inline-block rounded-full bg-terracotta px-9 py-4 text-lg font-medium text-cream"
-          >
-            Reservar visita →
-          </a>
-        </div>
-      </div>
-      <div className="mt-14 flex justify-between border-t border-cream/10 pt-6 text-sm text-cream/50">
-        <span>© 2026 Roble Taller</span>
-        <span>Hecho a mano</span>
-      </div>
-    </footer>
   );
 }
